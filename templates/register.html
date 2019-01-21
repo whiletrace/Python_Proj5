@@ -1,14 +1,15 @@
 {% extends 'layout.html' %}
 {% from 'macro.html' import render_field %}
+{% block content %}
             <div class="container">
                 <div class="edit-entry">
                     <h2>Register</h2>
                     <form method="post">
-                        <label for="username"> username</label>
+
                         {{ render_field(form.username) }}
-                        <label for="password">password</label>
+
                         {{ render_field(form.password) }}
-                        <label for='confirm password'> confirm password</label>
+
                         {{ render_field(form.confirm) }}
 
                         <input type="submit" value="register" class="button">
@@ -16,3 +17,4 @@
                     </form>
                 </div>
             </div>
+{% endblock %}

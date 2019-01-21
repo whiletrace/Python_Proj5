@@ -1,0 +1,9 @@
+certifi==2018.10.15
+enum34==1.1.6
+pbr==3.1.1
+six==1.11.0
+stevedore==1.28.0
+typing==3.6.6
+virtualenv==15.1.0
+virtualenv-clone==0.2.6
+virtualenvwrapper==4.8.2
