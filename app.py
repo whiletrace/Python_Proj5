@@ -13,7 +13,7 @@ from models import User
 
 def create_app():
     app = Flask(__name__)
-
+    app.secret_key = 'opu98wrwerworus.fmaouwerk,svlasnfweoru'
     DEBUG = True
     PORT = 8000
     HOST = '0.0.0.0'
@@ -28,7 +28,7 @@ def create_app():
                 )
             flash('congrats you are registered', category='success')
             redirect(url_for('index'))
-        render_template('register.html', form=form)
+        return render_template('register.html', form=form)
 
 
     @app.route('/')
