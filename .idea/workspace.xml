@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="87330808-9193-4518-932a-ab3e82d6e0ab" name="Default Changelist" comment="">
+    <list default="true" id="87330808-9193-4518-932a-ab3e82d6e0ab" name="Default Changelist" comment="because of improper provisioning at app initiation had to reinstall packages to correct dir">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../taco_cat/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../taco_cat/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../taco_cat/app_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../taco_cat/app_tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../taco_cat/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../taco_cat/forms.py" afterDir="false" />
@@ -51,49 +52,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#90#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#33#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/edit.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="475">
+              <caret line="33" column="26" lean-forward="true" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/pytest">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -106,7 +79,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="ROOT_SYNC" value="SYNC" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_COMMON_BRANCH" value="master" />
   </component>
@@ -139,10 +112,33 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="Python_Proj5" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Python_Proj5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Python_Proj5" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -329,7 +325,7 @@
       <workItem from="1547950967752" duration="10736000" />
       <workItem from="1547963226482" duration="774000" />
       <workItem from="1547964087015" duration="1663000" />
-      <workItem from="1547967430941" duration="865000" />
+      <workItem from="1547967430941" duration="2351000" />
     </task>
     <task id="LOCAL-00001" summary="this is the first commit to the feature branch I have provisioned my templates, completed first models, and have initiated some pytest with fixtures and two tests">
       <created>1547965868839</created>
@@ -338,7 +334,14 @@
       <option name="project" value="LOCAL" />
       <updated>1547965868839</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="because of improper provisioning at app initiation had to reinstall packages to correct dir">
+      <created>1548032758891</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1548032758891</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -374,7 +377,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54427000" />
+    <option name="totallyTimeSpent" value="55913000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -388,13 +391,13 @@
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" side_tool="true" weight="0.3013006" />
+      <window_info content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.3013006" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.39306358" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="0" weight="0.8900524" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.49783236" visible="true" weight="0.2486911" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49783236" weight="0.2486911" />
       <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.49927744" weight="0.48560208" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -402,8 +405,8 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32984293" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50216764" side_tool="true" visible="true" weight="0.2486911" />
-      <window_info anchor="bottom" id="Terminal" order="12" weight="0.30890054" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5007225" side_tool="true" weight="0.29057592" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49927744" visible="true" weight="0.9502618" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.32853404" />
       <window_info anchor="right" id="Coverage" order="0" sideWeight="0.28947368" side_tool="true" weight="0.32731214" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
@@ -443,7 +446,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="this is the first commit to the feature branch I have provisioned my templates, completed first models, and have initiated some pytest with fixtures and two tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="this is the first commit to the feature branch I have provisioned my templates, completed first models, and have initiated some pytest with fixtures and two tests" />
+    <MESSAGE value="because of improper provisioning at app initiation had to reinstall packages to correct dir" />
+    <option name="LAST_COMMIT_MESSAGE" value="because of improper provisioning at app initiation had to reinstall packages to correct dir" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -818,10 +822,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pyvenv.cfg">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/pytest">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pip-selfcheck.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/py.test">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#95#104#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="475">
+          <caret line="33" column="26" lean-forward="true" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
