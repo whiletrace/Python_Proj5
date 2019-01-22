@@ -1,5 +1,5 @@
-from flask_login import UserMixin
 from flask_bcrypt import generate_password_hash
+from flask_login import UserMixin
 from peewee import *
 
 DATABASE = SqliteDatabase('journal')
@@ -15,7 +15,7 @@ class User(UserMixin, BaseModel):
     password = CharField(max_length=50, unique=True)
 
     @classmethod
-    def create_users(cls, username, password):
+    def create_user(cls, username, password):
         try:
             with DATABASE.transaction():
                 cls.create(
@@ -39,13 +39,14 @@ class Entry(BaseModel):
     resources = TextField()
 
     @classmethod
-    def create_entry(cls, user, title, date, time_spent, knowledge_gained, resources):
+    def create_entry(cls, database, user, title, date, time_spent,
+                     knowledge_gained, resources):
         """
 
         @type date: object
         """
         try:
-            with DATABASE.transaction():
+            with database.transaction ():
                 cls.create(
                     user=user,
                     title=title,
@@ -64,10 +65,6 @@ class Tags(BaseModel):
 
 
 def initialize():
-    """
-
-
-    """
     DATABASE.connect()
-    DATABASE.create_tables([BaseModel, User, Entry], safe=True)
+    DATABASE.create_tables ([User, Entry], safe=True)
     DATABASE.close()

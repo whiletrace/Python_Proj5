@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% from 'macro.html' import render_field %}
+{% block content %}
+    <div class="container">
+        <div class="edit-entry">
+            <h2>Login</h2>
+            <form method="post">
+
+                {{ render_field(form.username) }}
+
+                {{ render_field(form.password) }}
+
+                <input type="submit" value="login" class="button">
+                <a href="#" class="button button-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}
