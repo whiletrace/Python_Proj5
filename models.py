@@ -6,13 +6,11 @@ DATABASE = SqliteDatabase('journal')
 
 
 class BaseModel(Model):
-
     class Meta:
         database = DATABASE
 
 
 class User(UserMixin, BaseModel):
-
     username = CharField(max_length=50, unique=True)
     password = CharField(max_length=50, unique=True)
 
@@ -42,17 +40,16 @@ class Entry(BaseModel):
     time_spent = TimeField()
     knowledge_gained = TextField()
     resources = TextField()
-    tags = CharField ()
 
     @classmethod
     def create_entry(cls, database, user, title, date, time_spent,
-                     knowledge_gained, resources, tags):
+                     knowledge_gained, resources):
         """
 
         @type date: object
         """
         try:
-            with database.transaction ():
+            with database.transaction():
                 cls.create(
                     user=user,
                     title=title,
@@ -60,18 +57,22 @@ class Entry(BaseModel):
                     time_spent=time_spent,
                     knowledge_gained=knowledge_gained,
                     resources=resources,
-                    tags=tags
 
                 )
         except InternalError:
             raise DatabaseError('could not creat a entry: database failure')
 
 
-def initialize():
-    """
-    @rtype: None
+class TAG(BaseModel):
+    tag = CharField()
 
-    """
+
+class JournalEntryTag(BaseModel):
+    journal_entry = ForeignKeyField(Entry)
+    tag = ForeignKeyField(TAG)
+
+
+def initialize():
     DATABASE.connect()
-    DATABASE.create_tables ([User, Entry], safe=True)
+    DATABASE.create_tables([User, Entry, TAG, JournalEntryTag], safe=True)
     DATABASE.close()
