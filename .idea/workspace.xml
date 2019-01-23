@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="87330808-9193-4518-932a-ab3e82d6e0ab" name="Default Changelist" comment="">
+    <list default="true" id="87330808-9193-4518-932a-ab3e82d6e0ab" name="Default Changelist" comment="registration and login ready pytest added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/journal" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/site.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/journal" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../taco_cat/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../taco_cat/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../taco_cat/app_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../taco_cat/app_tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../taco_cat/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../taco_cat/forms.py" afterDir="false" />
@@ -26,11 +21,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Python_Proj5$Unittests_for_test_user_TestUser_test_creat_users.coverage" NAME="Unittests for test_user.TestUser.test_creat_users Coverage Results" MODIFIED="1547611402405" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python_Proj5$pytest_for_test_app_test_empty_db.coverage" NAME="pytest for test_app.test_empty_db Coverage Results" MODIFIED="1547774217569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/Python_Proj5$pytest_for_conftest_test_database.coverage" NAME="pytest for conftest.test_database Coverage Results" MODIFIED="1547956249447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/Python_Proj5$Flask__app_py___1_.coverage" NAME="Flask (app.py) (1) Coverage Results" MODIFIED="1548122326764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/Python_Proj5$flask_pytest_app.coverage" NAME="flask_pytest_app Coverage Results" MODIFIED="1547773332575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Python_Proj5$Flask__app_py___1_.coverage" NAME="Flask (app.py) (1) Coverage Results" MODIFIED="1548133177171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Python_Proj5$app.coverage" NAME="app Coverage Results" MODIFIED="1548133321865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python_Proj5$pytest_for_conftest_test_models.coverage" NAME="pytest for conftest.test_models Coverage Results" MODIFIED="1547780441768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/Python_Proj5$pytest_for_test_app_test_create_users.coverage" NAME="pytest for test_app.test_create_users Coverage Results" MODIFIED="1548039887746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/Python_Proj5$Python_Proj5.coverage" NAME="Python_Proj5 Coverage Results" MODIFIED="1547963492473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -38,6 +31,9 @@
     <SUITE FILE_PATH="coverage/Python_Proj5$pytest_for_test_app_test_create_entry.coverage" NAME="pytest for test_app.test_create_entry Coverage Results" MODIFIED="1548051582330" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/Python_Proj5$Unittests_for_test_user_TestUser.coverage" NAME="Unittests for test_user.TestUser Coverage Results" MODIFIED="1547611541514" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python_Proj5$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1547963347756" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Python_Proj5$Unittests_for_test_user_TestUser_test_creat_users.coverage" NAME="Unittests for test_user.TestUser.test_creat_users Coverage Results" MODIFIED="1547611402405" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Python_Proj5$pytest_for_conftest_test_database.coverage" NAME="pytest for conftest.test_database Coverage Results" MODIFIED="1547956249447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/Python_Proj5$flask_pytest_app.coverage" NAME="flask_pytest_app Coverage Results" MODIFIED="1547773332575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="CoverageViewManager">
     <option name="myElementSize" value="328" />
@@ -66,29 +62,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1056">
-              <caret line="44" selection-start-line="44" selection-end-line="44" />
+            <state relative-caret-position="181">
+              <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+              <folding>
+                <element signature="e#0#71#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="115">
+              <caret line="7" column="15" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#47#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/lib/python3.7/site-packages/flask_wtf/form.py">
+        <entry file="file://$PROJECT_DIR$/templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="74" selection-start-line="74" selection-end-line="74" />
+            <state relative-caret-position="168">
+              <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="576">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
         </entry>
@@ -120,21 +131,23 @@
         <option value="$PROJECT_DIR$/templates/new.html" />
         <option value="$PROJECT_DIR$/tests/test_entry.py" />
         <option value="$PROJECT_DIR$/tests/conftest.py" />
-        <option value="$PROJECT_DIR$/templates/login.html" />
         <option value="$PROJECT_DIR$/tests/test_app.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/bd4ff447-d0b8-42f9-a0c1-e67ce566abaa/console.sql" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/static/css/site.css" />
-        <option value="$PROJECT_DIR$/models.py" />
         <option value="$PROJECT_DIR$/forms.py" />
         <option value="$PROJECT_DIR$/templates/register.html" />
+        <option value="$PROJECT_DIR$/templates/login.html" />
+        <option value="$PROJECT_DIR$/test_baseModel.py" />
         <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/models.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -184,6 +197,11 @@
             <path>
               <item name="Python_Proj5" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app.py" type="8704e2dd:PyFileNode" />
+            </path>
+            <path>
+              <item name="Python_Proj5" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="forms.py" type="8704e2dd:PyFileNode" />
             </path>
             <path>
@@ -208,7 +226,10 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="database.main" />
+    <property name="settings.editor.selected.configurable" value="reference.idesettings.debugger.python" />
+  </component>
+  <component name="PyDebuggerOptionsProvider">
+    <option name="mySaveCallSignatures" value="true" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -222,7 +243,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Flask server.Flask (app.py) (1)">
+  <component name="RunManager" selected="Python.app">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Python_Proj5" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Flask (app.py) (1)" type="Python.FlaskServer" factoryName="Flask server" temporary="true" nameIsGenerated="true">
       <module name="Python_Proj5" />
       <option name="target" value="$PROJECT_DIR$/app.py" />
@@ -315,22 +358,6 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for conftest.test_database" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="Python_Proj5" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;conftest.test_database&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="pytest for test_app.test_create_entry" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Python_Proj5" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -370,16 +397,16 @@
       <item itemvalue="Flask server.Flask (app.py) (1)" />
       <item itemvalue="Python tests.flask_pytest_app" />
       <item itemvalue="Python tests.pytest for test_app.test_create_users" />
-      <item itemvalue="Python tests.pytest for conftest.test_database" />
       <item itemvalue="Python tests.pytest for test_app.test_create_entry" />
+      <item itemvalue="Python.app" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.app" />
         <item itemvalue="Flask server.Flask (app.py) (1)" />
         <item itemvalue="Python tests.pytest for test_app.test_create_entry" />
         <item itemvalue="Flask server.Flask (app.py)" />
         <item itemvalue="Python tests.pytest for test_app.test_create_users" />
-        <item itemvalue="Flask server.Flask (app.py)" />
       </list>
     </recent_temporary>
   </component>
@@ -406,7 +433,7 @@
       <workItem from="1547964087015" duration="1663000" />
       <workItem from="1547967430941" duration="10678000" />
       <workItem from="1548111215581" duration="1748000" />
-      <workItem from="1548113384804" duration="9605000" />
+      <workItem from="1548113384804" duration="13754000" />
     </task>
     <task id="LOCAL-00001" summary="this is the first commit to the feature branch I have provisioned my templates, completed first models, and have initiated some pytest with fixtures and two tests">
       <created>1547965868839</created>
@@ -422,7 +449,14 @@
       <option name="project" value="LOCAL" />
       <updated>1548032758891</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fixed issue where data from register form was not posting to server and my User was not being created missing {{ forms.hidden_tag() }} so it  failing authentication csrf tokens were not being passed">
+      <created>1548123918850</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1548123918850</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -458,7 +492,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75593000" />
+    <option name="totallyTimeSpent" value="79742000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -479,7 +513,7 @@
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
       <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49783236" weight="0.2657068" />
-      <window_info active="true" anchor="bottom" id="Debug" order="4" sideWeight="0.49927744" visible="true" weight="0.5274869" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.49927744" weight="0.5274869" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32853404" />
@@ -487,7 +521,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32984293" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5007225" side_tool="true" weight="0.29057592" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49927744" weight="0.48560208" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49927744" visible="true" weight="0.14528796" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.32853404" />
       <window_info anchor="right" id="Coverage" order="0" sideWeight="0.28947368" side_tool="true" weight="0.32731214" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
@@ -571,75 +605,15 @@
           <line>18</line>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tests/test_app.py</url>
-          <line>1</line>
-          <option name="timeStamp" value="48" />
+        <line-breakpoint enabled="true" log-message="true" log-stack="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app.py</url>
+          <line>84</line>
+          <option name="timeStamp" value="93" />
         </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/models.py</url>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app.py</url>
           <line>16</line>
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/models.py</url>
-          <line>13</line>
-          <option name="timeStamp" value="70" />
-        </line-breakpoint>
-        <line-breakpoint log-stack="true" suspend="NONE" type="python-line">
-          <url>file://$PROJECT_DIR$/models.py</url>
-          <line>14</line>
-          <option name="timeStamp" value="71" />
-        </line-breakpoint>
-        <line-breakpoint log-stack="true" suspend="NONE" type="python-line">
-          <url>file://$PROJECT_DIR$/models.py</url>
-          <line>17</line>
-          <option name="timeStamp" value="72" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/models.py</url>
-          <line>18</line>
-          <option name="timeStamp" value="73" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/models.py</url>
-          <line>20</line>
-          <option name="timeStamp" value="74" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/models.py</url>
-          <line>19</line>
-          <option name="timeStamp" value="75" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/models.py</url>
-          <line>21</line>
-          <option name="timeStamp" value="76" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/models.py</url>
-          <line>22</line>
-          <option name="timeStamp" value="77" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/models.py</url>
-          <line>24</line>
-          <option name="timeStamp" value="78" />
-        </line-breakpoint>
-        <line-breakpoint log-message="true" log-stack="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/models.py</url>
-          <line>25</line>
-          <option name="timeStamp" value="79" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/models.py</url>
-          <line>65</line>
-          <option name="timeStamp" value="80" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/models.py</url>
-          <line>12</line>
-          <option name="timeStamp" value="81" />
+          <option name="timeStamp" value="94" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -706,7 +680,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../Python_Proj5/lib/python3.7/site-packages/py/_path/local.py" />
     <entry file="file://$PROJECT_DIR$/../../Python_Proj5/lib/python3.7/site-packages/_pytest/fixtures.py" />
     <entry file="file://$PROJECT_DIR$/../../Python_Proj5/lib/python3.7/site-packages/_pytest/python.py" />
     <entry file="file://$PROJECT_DIR$/../../Python_Proj5/lib/python3.7/site-packages/pluggy/callers.py" />
@@ -760,13 +733,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/pytest" />
-    <entry file="file://$PROJECT_DIR$/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="16" column="18" lean-forward="true" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -779,13 +745,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/journal">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/journal">
       <provider selected="true" editor-type-id="text-editor">
@@ -972,17 +931,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models.py">
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="576">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_baseModel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1056">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
+        <state relative-caret-position="181">
+          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#71#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="7" column="15" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

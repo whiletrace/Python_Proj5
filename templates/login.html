@@ -5,6 +5,7 @@
         <div class="edit-entry">
             <h2>Login</h2>
             <form method="post">
+                {{ form.hidden_tag() }}
 
                 {{ render_field(form.username) }}
 

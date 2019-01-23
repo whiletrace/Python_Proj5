@@ -7,6 +7,13 @@ import models
 
 
 def create_app():
+    """
+
+
+    @return:
+    @rtype: flask.app.Flask
+
+    """
     models.initialize ()
     app = Flask(__name__)
     app.secret_key = 'opu98wrwerworus.fmaouwerk,svlasnfweoru'
@@ -68,8 +75,9 @@ def create_app():
         return render_template ('login.html', form=form)
 
     @app.route('/')
-    def hello_world():
-        return 'Hello World!'
+    def index():
+        return render_template ('index.html')
+
     return app
 
 
