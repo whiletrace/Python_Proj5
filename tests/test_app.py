@@ -4,8 +4,8 @@ import models
 
 
 def test_create_users(test_database):
+    models.User.create_user(
 
-    models.User.create_users(
         username='eddimall',
         password='password'
             )
@@ -14,12 +14,11 @@ def test_create_users(test_database):
 
 
 def test_create_entry(test_database):
-    models.User.create_user (
+    models.User.create_user(
         username='eddimall',
         password='password')
     user = models.User.select().get()
     models.Entry.create_entry(
-        test_database,
         user=user,
         title='shamrock',
         date=datetime.now(),

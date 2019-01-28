@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import PasswordField, StringField, DateField, IntegerField, TextAreaField
 from wtforms.validators import (
-    DataRequired, EqualTo, Length, ValidationError, Regexp
+    DataRequired, EqualTo, Length, ValidationError, Optional
 )
 
 import models
@@ -13,7 +13,7 @@ def username_exists(form, field):
         raise ValidationError('User already exits')
 
 
-class Register(FlaskForm):
+class RegisterForm(FlaskForm):
     username = StringField(
         'Username',
         validators=[
@@ -37,7 +37,7 @@ class Register(FlaskForm):
         ])
 
 
-class Login(FlaskForm):
+class LoginForm(FlaskForm):
     username = StringField(
         "Username",
         validators=[
@@ -51,7 +51,7 @@ class Login(FlaskForm):
     )
 
 
-class Entry(FlaskForm):
+class EntryForm(FlaskForm):
     title = StringField(
         'Title',
         validators=[
@@ -62,10 +62,7 @@ class Entry(FlaskForm):
     date = DateField(
         'Date',
         validators=[
-            Regexp(
-                r'^(\d{2}\/\d{2}\/\d{4})',
-                message='date should be entered in the format MM/DD/YYYY'
-            ),
+
             DataRequired()
         ],
         format='%m:%d:%Y'
@@ -88,7 +85,12 @@ class Entry(FlaskForm):
             DataRequired()
         ]
     )
+    tag = StringField(
+        "create tags",
+        validators=[
+            Optional(strip_whitespace=True)
+        ]
+    )
 
-
-class Tag(FlaskForm):
-    tag = StringField()
+# class TagForm(FlaskForm):
+# tag = StringField()

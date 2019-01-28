@@ -1,6 +1,8 @@
+from datetime import timedelta
+
 from flask import (Flask, flash, g, redirect, render_template, url_for)
 from flask_bcrypt import check_password_hash
-from flask_login import (LoginManager, current_user, login_user)
+from flask_login import (LoginManager, current_user, login_user, login_required)
 
 import forms
 import models
@@ -10,8 +12,8 @@ def create_app():
     models.initialize()
     app = Flask(__name__)
     app.secret_key = 'opu98wrwerworus.fmaouwerk,svlasnfweoru'
-    login_manager = LoginManager()
-
+    login_manager = LoginManager(app)
+    login_manager.login_view = 'login'
     login_manager.init_app(app)
 
     @app.before_request
@@ -35,7 +37,7 @@ def create_app():
 
     @app.route('/register', methods=['GET', 'POST'])
     def register():
-        form = forms.Register()
+        form = forms.RegisterForm()
         if form.validate_on_submit():
             models.User.create_user(
                 username=form.username.data,
@@ -47,7 +49,7 @@ def create_app():
 
     @app.route('/login', methods=['GET', 'POST'])
     def login():
-        form = forms.Login()
+        form = forms.LoginForm()
         if form.validate_on_submit():
             try:
                 user = models.User.get(
@@ -62,10 +64,35 @@ def create_app():
                     return redirect(url_for('index'))
                 else:
                     flash(flash(
-                        'oops that email or password does not match our '
+                        'oops that email or password does not match our'
                         'records',
                         category='error'))
         return render_template('login.html', form=form)
+
+    @app.route('/add/entry', methods=['GET', 'POST'])
+    @login_required
+    def entry():
+        form = forms.EntryForm()
+        if form.validate_on_submit():
+            models.Entry.create_entry(
+                user=g.user._get_current_object(),
+                title=form.title.data,
+                date=form.date.data,
+                time_spent=timedelta(seconds=float(form.time_spent.data)),
+                knowledge_gained=form.knowledge_gained.data,
+                resources=form.resources_to_remember.data,
+            )
+            if form.tag.data:
+                tags = form.tag.data.split(',')
+                models.Tag.create_tags(*tags)
+
+                flash('journal entry published', category='success')
+            return redirect(url_for('index'))
+        return render_template('new.html', form=form)
+
+    @app.route('/edit/entry')
+    def edit():
+        pass
 
     @app.route('/')
     def index():
