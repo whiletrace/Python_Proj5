@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
-from wtforms import PasswordField, StringField, DateField, IntegerField, TextAreaField
+from wtforms import DateField, IntegerField, PasswordField, StringField, TextAreaField
 from wtforms.validators import (
-    DataRequired, EqualTo, Length, ValidationError, Optional
+    DataRequired, EqualTo, Length, ValidationError
 )
 
 import models
@@ -88,7 +88,7 @@ class EntryForm(FlaskForm):
     tag = StringField(
         "create tags",
         validators=[
-            Optional(strip_whitespace=True)
+            DataRequired()
         ]
     )
 

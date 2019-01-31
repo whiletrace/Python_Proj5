@@ -31,10 +31,10 @@ class User(UserMixin, BaseModel):
 
 
 class Tag(BaseModel):
-    name = CharField(unique=False)
+    name = CharField(unique=False, null=True)
 
     @classmethod
-    def create_tags(cls, *name):
+    def create_tags(cls, name):
         try:
             with cls._meta.database.transaction():
                 cls.create(
@@ -85,6 +85,7 @@ class JournalTags(BaseModel):
     tag = ForeignKeyField(
         Tag
     )
+
 
 def initialize():
     DATABASE.connect()

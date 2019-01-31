@@ -2,7 +2,7 @@ from datetime import timedelta
 
 from flask import (Flask, flash, g, redirect, render_template, url_for)
 from flask_bcrypt import check_password_hash
-from flask_login import (LoginManager, current_user, login_user, login_required)
+from flask_login import (LoginManager, current_user, login_required, login_user)
 
 import forms
 import models
@@ -72,8 +72,10 @@ def create_app():
     @app.route('/add/entry', methods=['GET', 'POST'])
     @login_required
     def entry():
+        count = 0
         form = forms.EntryForm()
         if form.validate_on_submit():
+
             models.Entry.create_entry(
                 user=g.user._get_current_object(),
                 title=form.title.data,
@@ -82,11 +84,22 @@ def create_app():
                 knowledge_gained=form.knowledge_gained.data,
                 resources=form.resources_to_remember.data,
             )
+
             if form.tag.data:
                 tags = form.tag.data.split(',')
-                models.Tag.create_tags(*tags)
+                for tag in tags:
+                    models.Tag.create_tags(
+                        name=tag
+                    )
+                    taggs = models.Tag.select().order_by(models.Tag.id.desc()).get()
+                    models.JournalTags.insert(tag=taggs).execute()
 
-                flash('journal entry published', category='success')
+            journal = models.Entry.select().order_by(models.Entry.id.desc()).get()
+            models.JournalTags.insert(entry=journal).execute()
+            import pdb;
+            pdb.set_trace()
+
+            flash('journal entry published', category='success')
             return redirect(url_for('index'))
         return render_template('new.html', form=form)
 
