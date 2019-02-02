@@ -31,20 +31,18 @@ class User(UserMixin, BaseModel):
 
 
 class Tag(BaseModel):
-    name = CharField(unique=False, null=True)
+    name = CharField(unique=True, null=True)
 
     @classmethod
-    def create_tags(cls, name):
+    def get_or_create_tags(cls, name):
         try:
             with cls._meta.database.transaction():
-                cls.create(
+                return cls.create(
                     name=name
                 )
         except IntegrityError:
-            raise ValueError('this tag already exists for this entry')
-
-
-
+            tag = cls.get(name=name)
+            return tag
 
 class Entry(BaseModel):
     user = ForeignKeyField(
@@ -86,8 +84,15 @@ class JournalTags(BaseModel):
         Tag
     )
 
+    @classmethod
+    def create_relations(cls, entry, tags):
+        entries = []
+        for tag in tags:
+            entries.append(JournalTags(entry=entry, tag=tag))
+        with cls._meta.database.atomic():
+            JournalTags.bulk_create(entries)
 
 def initialize():
     DATABASE.connect()
-    DATABASE.create_tables([User, Entry, Tag, JournalTags], safe=True)
+    DATABASE.create_tables([User, Tag, Entry, JournalTags], safe=True)
     DATABASE.close()

@@ -72,7 +72,6 @@ def create_app():
     @app.route('/add/entry', methods=['GET', 'POST'])
     @login_required
     def entry():
-        count = 0
         form = forms.EntryForm()
         if form.validate_on_submit():
 
@@ -85,17 +84,19 @@ def create_app():
                 resources=form.resources_to_remember.data,
             )
 
-            if form.tag.data:
-                tags = form.tag.data.split(',')
-                for tag in tags:
-                    models.Tag.create_tags(
-                        name=tag
-                    )
-                    taggs = models.Tag.select().order_by(models.Tag.id.desc()).get()
-                    models.JournalTags.insert(tag=taggs).execute()
+            entry = models.Entry.get(title=form.title.data)
 
-            journal = models.Entry.select().order_by(models.Entry.id.desc()).get()
-            models.JournalTags.insert(entry=journal).execute()
+            if form.tag.data:
+                tag_data = form.tag.data.split(',')
+                tags = []
+                for item in tag_data:
+                    tag = models.Tag.get_or_create_tags(
+                        name=item
+                    )
+                    tags.append(tag)
+
+                models.JournalTags.create_relations(entry, tags)
+
             import pdb;
             pdb.set_trace()
 
