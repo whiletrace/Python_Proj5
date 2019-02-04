@@ -29,6 +29,8 @@ class User(UserMixin, BaseModel):
         except IntegrityError:
             raise ValueError('username and Password exists')
 
+    def get_entry(self):
+        Entry.select().where(User == self)
 
 class Tag(BaseModel):
     name = CharField(unique=True, null=True)

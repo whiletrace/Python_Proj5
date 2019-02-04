@@ -1,0 +1,16 @@
+<component name="ProjectCodeStyleConfiguration">
+  <code_scheme name="Project" version="173">
+    <Python>
+      <option name="SPACE_AROUND_EQ_IN_NAMED_PARAMETER" value="true" />
+      <option name="BLANK_LINES_BEFORE_FIRST_METHOD" value="1" />
+      <option name="BLANK_LINE_AT_FILE_END" value="false" />
+      <option name="SPACE_BEFORE_NUMBER_SIGN" value="false" />
+      <option name="OPTIMIZE_IMPORTS_SORT_NAMES_IN_FROM_IMPORTS" value="true" />
+    </Python>
+    <codeStyleSettings language="Python">
+      <option name="BLANK_LINES_AROUND_CLASS" value="2" />
+      <option name="WRAP_LONG_LINES" value="true" />
+      <option name="SOFT_MARGINS" value="1" />
+    </codeStyleSettings>
+  </code_scheme>
+</component>
