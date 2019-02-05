@@ -1,5 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import DateField, IntegerField, PasswordField, StringField, TextAreaField
+from wtforms import IntegerField, PasswordField, StringField, TextAreaField
+from wtforms.fields.html5 import DateField
 from wtforms.validators import (
     DataRequired, EqualTo, Length, ValidationError
 )
@@ -60,12 +61,10 @@ class EntryForm(FlaskForm):
         ]
     )
     date = DateField(
-        'Date',
-        validators=[
+        'DatePicker',
+        format='%Y-%m-%d',
 
-            DataRequired()
-        ],
-        format='%m:%d:%Y'
+
     )
     time_spent = IntegerField(
         "time spent",

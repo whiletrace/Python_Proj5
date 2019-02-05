@@ -1,4 +1,4 @@
-from datetime import timedelta
+import datetime
 
 from flask import (Flask, flash, g, redirect, render_template, url_for)
 from flask_bcrypt import check_password_hash
@@ -86,8 +86,8 @@ def create_app():
             models.Entry.create_entry(
                 user=g.user._get_current_object(),
                 title=form.title.data,
-                date=form.date.data,
-                time_spent=timedelta(seconds=float(form.time_spent.data)),
+                date=(form.date.data.strftime('%m/%d/%Y')),
+                time_spent=datetime.timedelta(seconds=float(form.time_spent.data)),
                 knowledge_gained=form.knowledge_gained.data,
                 resources=form.resources_to_remember.data,
             )
@@ -109,15 +109,30 @@ def create_app():
             return redirect(url_for('index'))
         return render_template('new.html', form=form)
 
-    @app.route('/edit/entry')
-    def edit():
+    @app.route('/edit/entry<id>')
+    def edit(id):
         pass
 
     @app.route('/', methods=['GET'])
+
     def index():
         all_entries = models.Entry.select()
 
         return render_template('index.html', all_entries=all_entries)
+
+    @app.route('/user', methods=['GET'])
+    @login_required
+    def user_entries():
+        try:
+            # need to get the current logged in user
+            user = current_user
+
+            # need to get current logged in user entries
+            journal_entries = models.User.get_entry().select().where(models.Entry.user == user.id)
+            return render_template('user_stream.html', journal_entries=journal_entries)
+        except ValueError:
+            print('cant get this ')
+
 
     return app
 
