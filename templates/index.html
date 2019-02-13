@@ -5,8 +5,10 @@
                 <div class="entry-list">
                     {% for entry in all_entries %}
                     <article>
-                        <h2><a href="detail.html">{{ entry.title }}</a></h2>
+
+                        <h2><a href="{{ url_for('entries',  entry_id=entry.id) }}">{{ entry.title }}</a></h2>
                         <time datetime="{{ entry.date }}">{{ entry.date }}</time>
+
                     </article>
                     {% endfor %}
                 </div>

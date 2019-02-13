@@ -1,7 +1,8 @@
 import pytest
-
 from peewee import *
-from app import create_app
+
+from journal_app import create_app
+
 TEST_DATABASE = SqliteDatabase(':memory:')
 from models import User, Entry
 

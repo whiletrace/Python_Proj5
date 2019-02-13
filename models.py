@@ -2,7 +2,7 @@ from flask_bcrypt import generate_password_hash
 from flask_login import UserMixin
 from peewee import *
 from peewee import ForeignKeyField
-
+from playhouse.fields import PickleField
 
 DATABASE = SqliteDatabase('journal')
 
@@ -18,9 +18,7 @@ class User(UserMixin, BaseModel):
 
     @classmethod
     def create_user(cls, username, password):
-
         try:
-            # import pdb;pdb.set_trace()
             with cls._meta.database.transaction():
                 cls.create(
                     username=username,
@@ -29,8 +27,6 @@ class User(UserMixin, BaseModel):
         except IntegrityError:
             raise ValueError('username and Password exists')
 
-    def get_entry(self):
-        Entry.select().where(User == self)
 
 class Tag(BaseModel):
     name = CharField(unique=True, null=True)
@@ -56,13 +52,13 @@ class Entry(BaseModel):
     title = CharField(max_length=75)
     date = DateField()
     time_spent = TimeField()
-    knowledge_gained = TextField()
-    resources = TextField()
+    knowledge = TextField()
+    resources = PickleField()
 
     @classmethod
     def create_entry(
             cls, user, title, date, time_spent,
-            knowledge_gained, resources,
+            knowledge, resources,
     ):
 
         try:
@@ -72,8 +68,9 @@ class Entry(BaseModel):
                     title=title,
                     date=date,
                     time_spent=time_spent,
-                    knowledge_gained=knowledge_gained,
-                    resources=resources)
+                    knowledge=knowledge,
+                    resources=resources
+                )
         except InternalError:
             raise DatabaseError('could not creat a entry: database failure')
 
@@ -94,7 +91,8 @@ class JournalTags(BaseModel):
         with cls._meta.database.atomic():
             JournalTags.bulk_create(entries)
 
+
 def initialize():
     DATABASE.connect()
-    DATABASE.create_tables([User, Tag, Entry, JournalTags], safe=True)
+    DATABASE.create_tables([User, Entry, Tag, JournalTags], safe=True),
     DATABASE.close()

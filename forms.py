@@ -72,13 +72,13 @@ class EntryForm(FlaskForm):
             DataRequired()
         ]
     )
-    knowledge_gained = TextAreaField(
+    knowledge = TextAreaField(
         "What I Learned",
         validators=[
             DataRequired()
         ]
     )
-    resources_to_remember = TextAreaField(
+    resources = TextAreaField(
         "Resources To Remember",
         validators=[
             DataRequired()
