@@ -71,10 +71,10 @@ def login():
                 flash('you are logged in', category='success')
                 return redirect(url_for('index'))
             else:
-                flash(flash(
+                flash(
                     'oops that email or password does not match our'
                     'records',
-                    category='error'))
+                    category='error')
     return render_template('login.html', form=form)
 
 
@@ -148,26 +148,31 @@ def entries(entry_id):
     return render_template('detail.html', single_entry=single_entry)
 
 
-@app.route('/entries/edit/<int:entry_id>', methods=['GET', 'Post'])
+# pass the entry id to the URL
+# need to get pass the entry id from detail pg
+@app.route('/edit/<int:entry_id>', methods=['GET', 'POST'])
+@login_required
 def edit_entries(entry_id):
+    # store value of query Entry with id that matches value passed
     entry_to_edit = models.Entry.select().where(models.Entry.id == entry_id).get()
-    form = forms.EntryForm()
-    form.title.data = entry_to_edit.title
-    form.date.data = entry_to_edit.date
-    form.time_spent.data = entry_to_edit.time_spent
-    form.knowledge.data = entry_to_edit.knowledge
-    form.resources.data = entry_to_edit.resources
-    return render_template('edit.html', form=form, entry_to_edit=entry_to_edit)
-    # need to get pass the entry id from detail pg
-    # pass the entry id to the URL
-    # store that entry in variable using a query to the User Model
+    entry_owner = entry_to_edit.user
 
-    # populate the entry form with data from select query
-    # upon the submit button update the contents of the entry
-    # alert the user that the update has taken place
     # constraints = if owner of the Entry is not the current user do not allow edit
+    if current_user == entry_owner:
+        # populate the entry form with data from select query
+        form = forms.EntryForm(obj=entry_to_edit)
 
-    pass
+        # upon the submit button update the contents of the entry
+        if form.validate_on_submit():
+            form.populate_obj(entry_to_edit)
+            models.Entry.save(entry_to_edit)
+            # alert the user that the update has taken place
+            flash('hey we updated your entry', category='success')
+            return redirect(url_for('index'))
+    else:
+        flash('you need to be the entries owner to edit this', category='error')
+        return redirect(url_for('index'))
+    return render_template('edit.html', form=form)
 
 
 if __name__ == "__main__":

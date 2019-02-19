@@ -6,17 +6,17 @@
                     <h2>Edit Entry</h2>
                     <form method="post">
                         {{ form.hidden_tag() }}
-                        <label for="title"> Title</label>
-                        <input id="title" type="text" name="title"><br>
-                        <label for="date">Date</label>
-                        <input id="date" type="date" name="date"><br>
-                        <label for="time-spent"> Time Spent</label>
-                        <input id="time-spent" type="text" name="timeSpent"><br>
-                        <label for="what-i-learned">What I Learned</label>
-                        <textarea id="what-i-learned" rows="5" name="whatILearned"></textarea>
-                        <label for="resources-to-remember">Resources to Remember</label>
-                        <textarea id="resources-to-remember" rows="5" name="ResourcesToRemember"></textarea>
-                        <input type="submit" value="Publish Entry" class="button">
+
+                        {{ render_field(form.title) }}
+
+                        {{ render_field(form.date) }}
+
+                        {{ render_field(form.time_spent) }}
+
+                        {{ render_field(form.knowledge) }}
+
+                        {{ render_field(form.resources) }}
+                        <input type="submit" value="update entry" class="button">
                         <a href="#" class="button button-secondary">Cancel</a>
                     </form>
                 </div>

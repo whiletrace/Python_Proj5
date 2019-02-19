@@ -74,6 +74,17 @@ class Entry(BaseModel):
         except InternalError:
             raise DatabaseError('could not creat a entry: database failure')
 
+    @classmethod
+    def update_entry(cls, title, date, time_spent, knowledge, resources
+
+                     ):
+        try:
+            cls.s(title=title, date=date, time_spent=time_spent,
+                  knowledge=knowledge, resources=resources
+                  )
+        except InternalError:
+            raise DatabaseError('something is worong with udate_entry class method')
+
 
 class JournalTags(BaseModel):
     entry = ForeignKeyField(
