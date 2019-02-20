@@ -96,7 +96,7 @@ def entry():
             user=g.user._get_current_object(),
             title=form.title.data,
             date=(form.date.data.strftime('%m/%d/%Y')),
-            time_spent=datetime.timedelta(seconds=float(form.time_spent.data)),
+            time_spent=datetime.timedelta(minutes=float(form.time_spent.data)),
             knowledge=form.knowledge.data,
             resources=form.resources.data.splitlines()
         )
@@ -155,6 +155,7 @@ def entries(entry_id):
 def edit_entries(entry_id):
     # store value of query Entry with id that matches value passed
     entry_to_edit = models.Entry.select().where(models.Entry.id == entry_id).get()
+    entry_to_edit.resources = ',\n'.join(entry_to_edit.resources)
     entry_owner = entry_to_edit.user
 
     # constraints = if owner of the Entry is not the current user do not allow edit
@@ -165,6 +166,8 @@ def edit_entries(entry_id):
         # upon the submit button update the contents of the entry
         if form.validate_on_submit():
             form.populate_obj(entry_to_edit)
+            entry_to_edit.time_spent = datetime.timedelta(minutes=float(form.time_spent.data))
+            entry_to_edit.resources = form.resources.data.splitlines()
             models.Entry.save(entry_to_edit)
             # alert the user that the update has taken place
             flash('hey we updated your entry', category='success')
