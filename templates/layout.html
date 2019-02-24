@@ -24,23 +24,14 @@
     {% endwith %}
         <header>
             <div class="container">
+
                 <div class="site-header">
                     <a class="logo" href="{{ url_for('index') }}"><i class="material-icons">library_books</i></a>
+                    {% block button %}
 
-                    {% if current_user.is_authenticated %}
-
-                    <a class="button icon-right" href="{{ url_for('entry') }}"><span>New Entry</span> <i
-                            class="material-icons">add</i></a>
-                        <a class="button icon-left" href="{{ url_for('logout') }}"><span>logout</span> <i
-                                class="material-icons">add</i></a>
-
-                    {% else %}
-                        <a class="button icon-right" href="{{ url_for('login') }}"><span>login</span> <i
-                                class="material-icons">add</i></a>
-                        <a class="button icon-right" href="{{ url_for('register') }}"><span>register</span> <i
-                                class="material-icons">add</i></a>
-                    {% endif %}
+                    {% endblock %}
                 </div>
+
             </div>
         </header>
             <section>

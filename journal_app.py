@@ -6,6 +6,7 @@ from flask_bcrypt import check_password_hash
 from flask_login import (LoginManager, current_user,
                          login_required, login_user, logout_user)
 
+import dummy_data
 import forms
 import models
 
@@ -141,11 +142,13 @@ def user_entries():
 def entries(entry_id):
     # grab the id of the journal entry and pass that to the Url
     single_entry = models.Entry.select().where(models.Entry.id == entry_id).get()
+    entry_tags = (models.Tag.select().join(models.JournalTags).where(models.JournalTags.entry == single_entry)
+                  .order_by(models.Tag.name))
 
-    # import pdb ; pdb.set_trace()
+
     # query the and db and select the Entry that matches the id that is passed through the url
     # render and pass that to the details pg and then render the correct entry within the template
-    return render_template('detail.html', single_entry=single_entry)
+    return render_template('detail.html', single_entry=single_entry, entry_tags=entry_tags)
 
 
 # pass the entry id to the URL
@@ -153,6 +156,7 @@ def entries(entry_id):
 @app.route('/edit/<int:entry_id>', methods=['GET', 'POST'])
 @login_required
 def edit_entries(entry_id):
+    """"""
     # store value of query Entry with id that matches value passed
     entry_to_edit = models.Entry.select().where(models.Entry.id == entry_id).get()
     entry_to_edit.resources = ',\n'.join(entry_to_edit.resources)
@@ -178,31 +182,27 @@ def edit_entries(entry_id):
     return render_template('edit.html', form=form)
 
 
+@app.route('/delete/<int:entry_id>')
+@login_required
+def delete_entry(entry_id):
+    entry_to_delete = models.Entry.select().where(models.Entry.id == entry_id).get()
+    entry_owner = entry_to_delete.user
+    if current_user == entry_owner:
+        try:
+            q = models.Entry.delete().where(models.Entry.id == entry_to_delete.id)
+            q.execute()
+            flash('your entry has been deleted', category='success')
+            return redirect(url_for('index'))
+        except models.DoesNotExist:
+            return None
+    else:
+        flash("you must be the owner of this entry to be able to delete", category='error')
+        return redirect(url_for('index'))
+
+
 if __name__ == "__main__":
     models.initialize()
-    models.User.create_user(
-        username='trace',
-        password='password'
-    )
-    models.User.create_user(
-        username='uncle',
-        password='password',
-    )
-    models.Entry.create_entry(
-        user=1,
-        title='a wonderful',
-        date=datetime.datetime.now(),
-        time_spent=datetime.timedelta(minutes=234),
-        knowledge='I know things that only someone of my standing could know',
-        resources='eggs and coffee\n lsd\n yayo'.splitlines()
 
-    )
-    models.Entry.create_entry(
-        user=2,
-        title='life and bounty ',
-        date=datetime.datetime.now(),
-        time_spent=datetime.timedelta(minutes=988),
-        knowledge='yeah that first guy doesnt know squat',
-        resources='''eggs and coffee\r lsd\r yayo'''.splitlines()
-    )
+    dummy_data.entry_1()
+    dummy_data.entry_2()
     app.run(port=8000)
