@@ -42,6 +42,7 @@ class Tag(BaseModel):
             tag = cls.get(name=name)
             return tag
 
+
 class Entry(BaseModel):
     user = ForeignKeyField(
 
@@ -74,16 +75,7 @@ class Entry(BaseModel):
         except InternalError:
             raise DatabaseError('could not creat a entry: database failure')
 
-    @classmethod
-    def update_entry(cls, title, date, time_spent, knowledge, resources
 
-                     ):
-        try:
-            cls.s(title=title, date=date, time_spent=time_spent,
-                  knowledge=knowledge, resources=resources
-                  )
-        except InternalError:
-            raise DatabaseError('something is worong with udate_entry class method')
 
 
 class JournalTags(BaseModel):
@@ -102,6 +94,10 @@ class JournalTags(BaseModel):
         with cls._meta.database.atomic():
             JournalTags.bulk_create(entries)
 
+    @classmethod
+    def break_relations(cls, tag, entry):
+        q = cls.delete().where((cls.tag == tag) & (cls.entry == entry))
+        q.execute()
 
 def initialize():
     DATABASE.connect()

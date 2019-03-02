@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import IntegerField, PasswordField, StringField, TextAreaField
+from wtforms import FormField, IntegerField, PasswordField, StringField, TextAreaField
 from wtforms.fields.html5 import DateField
 from wtforms.validators import (DataRequired, EqualTo, Length, Optional, ValidationError)
 
@@ -50,13 +50,19 @@ class LoginForm(FlaskForm):
     )
 
 
+class TagForm(FlaskForm):
+    name = StringField(
+        "Tags",
+        validators=[
+            Optional()
+        ]
+    )
+
+
 class EntryForm(FlaskForm):
     title = StringField(
         'Title',
-        validators=[
-            DataRequired(),
-            Length(min=1, max=50)
-        ]
+
     )
     date = DateField(
         'DatePicker',
@@ -82,12 +88,4 @@ class EntryForm(FlaskForm):
             DataRequired()
         ]
     )
-    tag = StringField(
-        "create tags",
-        validators=[
-            Optional()
-        ]
-    )
-
-# class TagForm(FlaskForm):
-# tag = StringField()
+    name = FormField(TagForm)

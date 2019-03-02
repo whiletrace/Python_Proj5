@@ -91,6 +91,7 @@ def logout():
 @login_required
 def entry():
     form = forms.EntryForm()
+    form1 = forms.TagForm()
     if form.validate_on_submit():
 
         models.Entry.create_entry(
@@ -103,8 +104,8 @@ def entry():
         )
         journal_entry = models.Entry.get(title=form.title.data)
 
-        if form.tag.data:
-            tag_data = form.tag.data.split(',')
+        if form1.name.data:
+            tag_data = form1.name.data.split(',')
             tags = []
             for item in tag_data:
                 tag = models.Tag.get_or_create_tags(
@@ -116,7 +117,7 @@ def entry():
 
         flash('journal entry published', category='success')
         return redirect(url_for('index'))
-    return render_template('new.html', form=form)
+    return render_template('new.html', form=form, form1=form1)
 
 
 @app.route('/', methods=['GET'])
@@ -146,6 +147,7 @@ def entries(entry_id):
                   .order_by(models.Tag.name))
 
 
+
     # query the and db and select the Entry that matches the id that is passed through the url
     # render and pass that to the details pg and then render the correct entry within the template
     return render_template('detail.html', single_entry=single_entry, entry_tags=entry_tags)
@@ -156,30 +158,50 @@ def entries(entry_id):
 @app.route('/edit/<int:entry_id>', methods=['GET', 'POST'])
 @login_required
 def edit_entries(entry_id):
-    """"""
+
     # store value of query Entry with id that matches value passed
     entry_to_edit = models.Entry.select().where(models.Entry.id == entry_id).get()
+    entry_tags = (models.Tag.select().join(models.JournalTags).where(models.JournalTags.entry == entry_to_edit)
+                  .order_by(models.Tag.name))
+
     entry_to_edit.resources = ',\n'.join(entry_to_edit.resources)
     entry_owner = entry_to_edit.user
 
     # constraints = if owner of the Entry is not the current user do not allow edit
     if current_user == entry_owner:
         # populate the entry form with data from select query
+        tags = [tag.name for tag in entry_tags]
+        parsed_tags = ','.join(tags)
+
         form = forms.EntryForm(obj=entry_to_edit)
 
+        form1 = forms.TagForm(
+            name=parsed_tags
+        )
+
         # upon the submit button update the contents of the entry
+        # import pdb; pdb.set_trace()
         if form.validate_on_submit():
             form.populate_obj(entry_to_edit)
             entry_to_edit.time_spent = datetime.timedelta(minutes=float(form.time_spent.data))
             entry_to_edit.resources = form.resources.data.splitlines()
             models.Entry.save(entry_to_edit)
+
+        if form1.validate_on_submit():
+            tag_data = form1.name.data.split(',')
+            tag_pen = []
+            for tag in entry_tags:
+                if tag.name not in tag_data[:]:
+                    models.JournalTags.break_relations(tag, entry_to_edit)
+
+
             # alert the user that the update has taken place
             flash('hey we updated your entry', category='success')
             return redirect(url_for('index'))
     else:
         flash('you need to be the entries owner to edit this', category='error')
         return redirect(url_for('index'))
-    return render_template('edit.html', form=form)
+    return render_template('edit.html', form=form, form1=form1)
 
 
 @app.route('/delete/<int:entry_id>')
