@@ -158,29 +158,26 @@ def entries(entry_id):
 @app.route('/edit/<int:entry_id>', methods=['GET', 'POST'])
 @login_required
 def edit_entries(entry_id):
-
     # store value of query Entry with id that matches value passed
+    # queries
     entry_to_edit = models.Entry.select().where(models.Entry.id == entry_id).get()
     entry_tags = (models.Tag.select().join(models.JournalTags).where(models.JournalTags.entry == entry_to_edit)
                   .order_by(models.Tag.name))
+    all_tags = models.Tag.select()
+    # variables
 
-    entry_to_edit.resources = ',\n'.join(entry_to_edit.resources)
+    tags = [tag.name for tag in entry_tags]
+    parsed_tags = ','.join(tags)
     entry_owner = entry_to_edit.user
-
+    form = forms.EntryForm(obj=entry_to_edit)
+    form1 = forms.TagForm(
+        name=parsed_tags
+    )
     # constraints = if owner of the Entry is not the current user do not allow edit
     if current_user == entry_owner:
         # populate the entry form with data from select query
-        tags = [tag.name for tag in entry_tags]
-        parsed_tags = ','.join(tags)
-
-        form = forms.EntryForm(obj=entry_to_edit)
-
-        form1 = forms.TagForm(
-            name=parsed_tags
-        )
-
         # upon the submit button update the contents of the entry
-        # import pdb; pdb.set_trace()
+
         if form.validate_on_submit():
             form.populate_obj(entry_to_edit)
             entry_to_edit.time_spent = datetime.timedelta(minutes=float(form.time_spent.data))
@@ -189,11 +186,14 @@ def edit_entries(entry_id):
 
         if form1.validate_on_submit():
             tag_data = form1.name.data.split(',')
-            tag_pen = []
-            for tag in entry_tags:
-                if tag.name not in tag_data[:]:
-                    models.JournalTags.break_relations(tag, entry_to_edit)
-
+            for tag_obj in entry_tags:
+                if tag_obj.name not in tag_data:
+                    models.JournalTags.break_relations(tag_obj, entry_to_edit)
+            for item in tag_data:
+                if item not in tags:
+                    tag_data[:].remove(item)
+                    tag = [models.Tag.get_or_create_tags(item)]
+                    models.JournalTags.create_relations(entry_to_edit, tag)
 
             # alert the user that the update has taken place
             flash('hey we updated your entry', category='success')

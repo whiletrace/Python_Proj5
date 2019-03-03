@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="87330808-9193-4518-932a-ab3e82d6e0ab" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/journal_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/journal_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/new.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../taco_cat/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../taco_cat/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../taco_cat/app_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../taco_cat/app_tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../taco_cat/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../taco_cat/forms.py" afterDir="false" />
@@ -26,7 +21,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Python_Proj5$Flask__journal_app_py_app_.coverage" NAME="Flask (journal_app.py:app) Coverage Results" MODIFIED="1551513068095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Python_Proj5$Flask__journal_app_py_app_.coverage" NAME="Flask (journal_app.py:app) Coverage Results" MODIFIED="1551590241945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python_Proj5$pytest_for_test_app_test_empty_db.coverage" NAME="pytest for test_app.test_empty_db Coverage Results" MODIFIED="1547774217569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/Python_Proj5$Flask__app_py___1_.coverage" NAME="Flask (app.py) (1) Coverage Results" MODIFIED="1549937374846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/Python_Proj5$app.coverage" NAME="journal_app Coverage Results" MODIFIED="1549951160818" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -42,7 +37,7 @@
     <SUITE FILE_PATH="coverage/Python_Proj5$Unittests_for_test_user_TestUser_test_creat_users.coverage" NAME="Unittests for test_user.TestUser.test_creat_users Coverage Results" MODIFIED="1547611402405" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python_Proj5$pytest_for_conftest_test_database.coverage" NAME="pytest for conftest.test_database Coverage Results" MODIFIED="1547956249447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/Python_Proj5$flask_pytest_app.coverage" NAME="flask_pytest_app Coverage Results" MODIFIED="1547773332575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/Python_Proj5$journal_app.coverage" NAME="journal_app Coverage Results" MODIFIED="1551506477971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Python_Proj5$journal_app.coverage" NAME="journal_app Coverage Results" MODIFIED="1551594610122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python_Proj5$models.coverage" NAME="models Coverage Results" MODIFIED="1549943768432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CoverageViewManager">
@@ -71,14 +66,14 @@
     <favorites_list name="Python_Proj5" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5226537">
+    <splitter split-orientation="horizontal" split-proportion="0.123893805">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2139">
-                  <caret line="97" column="33" selection-start-line="97" selection-start-column="33" selection-end-line="97" selection-end-column="33" />
+                <state relative-caret-position="137">
+                  <caret line="87" selection-start-line="87" selection-end-line="87" />
                 </state>
               </provider>
             </entry>
@@ -95,7 +90,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/templates/edit.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-8">
+                <state>
                   <caret line="14" selection-start-line="14" selection-end-line="14" />
                 </state>
               </provider>
@@ -113,12 +108,15 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/journal_app.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="424">
-                  <caret line="195" selection-start-line="195" selection-end-line="195" />
+                <state relative-caret-position="421">
+                  <caret line="199" column="45" lean-forward="true" selection-start-line="199" selection-start-column="45" selection-end-line="199" selection-end-column="45" />
+                  <folding>
+                    <element signature="e#0#15#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -126,7 +124,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/bin/lib/python3.7/site-packages/peewee.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-8">
+                <state>
                   <caret line="4520" column="13" selection-start-line="4520" selection-start-column="13" selection-end-line="4520" selection-end-column="13" />
                 </state>
               </provider>
@@ -188,8 +186,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="2560" />
-    <option name="height" value="1440" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -198,6 +196,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Python_Proj5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Python_Proj5" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Changed Files'; set:Changed Files; ALL; class com.intellij.packageDependencies.ChangeListScope">
           <expand>
@@ -233,17 +242,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Python_Proj5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Python_Proj5" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -254,7 +252,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -284,7 +282,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Flask server.Flask (journal_app.py:app)">
+  <component name="RunManager" selected="Python.journal_app">
     <configuration name="journal_app" type="PythonConfigurationType" factoryName="Python">
       <module name="Python_Proj5" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -436,7 +434,8 @@
       <workItem from="1551069375858" duration="23131000" />
       <workItem from="1551327393669" duration="23000" />
       <workItem from="1551327459497" duration="5270000" />
-      <workItem from="1551391105316" duration="14305000" />
+      <workItem from="1551391105316" duration="14438000" />
+      <workItem from="1551576034510" duration="12956000" />
     </task>
     <task id="LOCAL-00001" summary="this is the first commit to the feature branch I have provisioned my templates, completed first models, and have initiated some pytest with fixtures and two tests">
       <created>1547965868839</created>
@@ -550,7 +549,14 @@
       <option name="project" value="LOCAL" />
       <updated>1550991266649</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="implemented cls.break_relations(cls, tag, entries) if a current tag in a entry is not in the form when submitted that tag and entry manytomany relationship is cut.">
+      <created>1551514898992</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1551514898992</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -586,7 +592,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="364016000" />
+    <option name="totallyTimeSpent" value="377105000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -598,16 +604,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.23242812" />
+      <window_info content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.23699422" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.39297125" />
       <window_info anchor="bottom" id="Inspection Results" order="0" weight="0.32923076" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="1" weight="0.8900524" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" sideWeight="0.49960065" weight="0.32846153" />
-      <window_info active="true" anchor="bottom" id="Run" order="4" sideWeight="0.6929191" visible="true" weight="0.3576923" />
+      <window_info active="true" anchor="bottom" id="Run" order="4" sideWeight="0.6929191" visible="true" weight="0.20789474" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.49079755" />
@@ -623,7 +629,7 @@
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.43424857" />
       <window_info anchor="right" id="SciView" order="4" sideWeight="0.7105263" weight="0.26806358" />
-      <window_info anchor="right" id="Database" order="5" visible="true" weight="0.02715655" />
+      <window_info anchor="right" id="Database" order="5" visible="true" weight="0.027456647" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.22543353" />
@@ -1107,13 +1113,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/new.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1123,29 +1122,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/edit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
+        <state>
           <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/new.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/lib/python3.7/site-packages/peewee.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
+        <state>
           <caret line="4520" column="13" selection-start-line="4520" selection-start-column="13" selection-end-line="4520" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2139">
-          <caret line="97" column="33" selection-start-line="97" selection-start-column="33" selection-end-line="97" selection-end-column="33" />
+        <state relative-caret-position="137">
+          <caret line="87" selection-start-line="87" selection-end-line="87" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/journal_app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="195" selection-start-line="195" selection-end-line="195" />
+        <state relative-caret-position="421">
+          <caret line="199" column="45" lean-forward="true" selection-start-line="199" selection-start-column="45" selection-end-line="199" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
