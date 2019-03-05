@@ -7,6 +7,7 @@ from flask_login import (LoginManager, current_user,
                          login_required, login_user, logout_user)
 from flask_wtf.csrf import CSRFProtect
 
+import dummy_data
 import forms
 import models
 
@@ -169,11 +170,10 @@ def edit_entries(entry_id):
     all_tags = models.Tag.select()
     # variables
 
-√
     tags = [tag.name for tag in entry_tags]
     parsed_tags = ','.join(tags)
     entry_owner = entry_to_edit.user
-form = forms.EditForm(obj=entry_to_edit)
+    form = forms.EditForm(obj=entry_to_edit)
     form1 = forms.TagForm(
         name=parsed_tags
     )
