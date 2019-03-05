@@ -5,13 +5,13 @@ from flask import (Flask, flash, g, redirect,
 from flask_bcrypt import check_password_hash
 from flask_login import (LoginManager, current_user,
                          login_required, login_user, logout_user)
+from flask_wtf.csrf import CSRFProtect
 
-import dummy_data
 import forms
 import models
 
 app = Flask(__name__)
-
+CSRFProtect(app)
 app.secret_key = 'opu98wrwerworus.fmaouwerk,svlasnfweoru'
 
 login_manager = LoginManager(app)
@@ -97,14 +97,14 @@ def entry():
         models.Entry.create_entry(
             user=g.user._get_current_object(),
             title=form.title.data,
-            date=(form.date.data.strftime('%m/%d/%Y')),
+            date=form.date.data,
             time_spent=datetime.timedelta(minutes=float(form.time_spent.data)),
             knowledge=form.knowledge.data,
             resources=form.resources.data.splitlines()
         )
         journal_entry = models.Entry.get(title=form.title.data)
 
-        if form1.name.data:
+        if form1.validate_on_submit():
             tag_data = form1.name.data.split(',')
             tags = []
             for item in tag_data:
@@ -163,13 +163,17 @@ def edit_entries(entry_id):
     entry_to_edit = models.Entry.select().where(models.Entry.id == entry_id).get()
     entry_tags = (models.Tag.select().join(models.JournalTags).where(models.JournalTags.entry == entry_to_edit)
                   .order_by(models.Tag.name))
+
+    import pdb;
+    pdb.set_trace()
     all_tags = models.Tag.select()
     # variables
 
+√
     tags = [tag.name for tag in entry_tags]
     parsed_tags = ','.join(tags)
     entry_owner = entry_to_edit.user
-    form = forms.EntryForm(obj=entry_to_edit)
+form = forms.EditForm(obj=entry_to_edit)
     form1 = forms.TagForm(
         name=parsed_tags
     )
@@ -181,14 +185,20 @@ def edit_entries(entry_id):
         if form.validate_on_submit():
             form.populate_obj(entry_to_edit)
             entry_to_edit.time_spent = datetime.timedelta(minutes=float(form.time_spent.data))
+            entry_to_edit.date = datetime.date.strptime(form.date.data, "%Y-%m-%d")
             entry_to_edit.resources = form.resources.data.splitlines()
             models.Entry.save(entry_to_edit)
 
         if form1.validate_on_submit():
+            # first convert form data into a list
             tag_data = form1.name.data.split(',')
+            # iterate through unedited tags
             for tag_obj in entry_tags:
+                # if the tag is not found in form data the relationship to the entry is broken
                 if tag_obj.name not in tag_data:
+                    # break relations is a class method performs delete query at the through table
                     models.JournalTags.break_relations(tag_obj, entry_to_edit)
+            # iterate through the form tag list
             for item in tag_data:
                 if item not in tags:
                     tag_data[:].remove(item)

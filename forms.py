@@ -65,9 +65,39 @@ class EntryForm(FlaskForm):
 
     )
     date = DateField(
-        'DatePicker',
-        format='%Y-%m-%d',
+        'DatePicker'
 
+
+
+    )
+    time_spent = IntegerField(
+        "time spent",
+        validators=[
+            DataRequired()
+        ]
+    )
+    knowledge = TextAreaField(
+        "What I Learned",
+        validators=[
+            DataRequired()
+        ]
+    )
+    resources = TextAreaField(
+        "Resources To Remember",
+        validators=[
+            DataRequired()
+        ]
+    )
+    name = FormField(TagForm)
+
+
+class EditForm(FlaskForm):
+    title = StringField(
+        'Title',
+
+    )
+    date = StringField(
+        'date',
 
     )
     time_spent = IntegerField(

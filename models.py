@@ -51,7 +51,7 @@ class Entry(BaseModel):
     )
 
     title = CharField(max_length=75)
-    date = DateField()
+    date = DateField(formats='%d/%m/%Y')
     time_spent = TimeField()
     knowledge = TextField()
     resources = PickleField()
