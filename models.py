@@ -29,7 +29,7 @@ class User(UserMixin, BaseModel):
 
 
 class Tag(BaseModel):
-    name = CharField(unique=True, null=True)
+    name = CharField(unique=True)
 
     @classmethod
     def get_or_create_tags(cls, name):

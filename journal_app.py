@@ -214,7 +214,6 @@ def edit_entries(entry_id):
             entry_to_edit.resources = form.resources.data.splitlines()
             models.Entry.save(entry_to_edit)
 
-
         if form1.validate_on_submit():
             # first convert form data into a list
             tag_data = form1.name.data.split(',')
@@ -238,7 +237,7 @@ def edit_entries(entry_id):
         flash('you need to be the entries owner to edit this', category='error')
         return redirect(url_for('index'))
 
-    return render_template('edit.html', form=form)
+    return render_template('edit.html', form=form, form1=form1)
 
 
 @app.route('/delete/<int:entry_id>')
