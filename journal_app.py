@@ -1,4 +1,6 @@
-import datetime
+# imports
+
+from datetime import datetime, timedelta
 
 from flask import (Flask, flash, g, redirect,
                    render_template, url_for)
@@ -11,6 +13,7 @@ import dummy_data
 import forms
 import models
 
+# app instantiation
 app = Flask(__name__)
 CSRFProtect(app)
 app.secret_key = 'opu98wrwerworus.fmaouwerk,svlasnfweoru'
@@ -24,7 +27,10 @@ login_manager.login_view = 'login'
 
 @app.before_request
 def before_request():
-    """connect to database before each request"""
+    """
+    opens database connects and inititates a current user proxy
+
+    """
     g.db = models.DATABASE
     g.db.connect()
     g.user = current_user
@@ -32,6 +38,15 @@ def before_request():
 
 @app.after_request
 def after_request(response):
+    """
+    after the request  closes db connection and returns http response obj
+
+    @param response: http response obj
+    @type response: flask.wrappers.Response
+    @return: response obj
+    @rtype: flask.wrappers.Response
+
+    """
     g.db.close()
     return response
 
@@ -99,7 +114,7 @@ def entry():
             user=g.user._get_current_object(),
             title=form.title.data,
             date=form.date.data,
-            time_spent=datetime.timedelta(minutes=float(form.time_spent.data)),
+            time_spent=timedelta(minutes=float(form.time_spent.data)),
             knowledge=form.knowledge.data,
             resources=form.resources.data.splitlines()
         )
@@ -110,7 +125,7 @@ def entry():
             tags = []
             for item in tag_data:
                 tag = models.Tag.get_or_create_tags(
-                    name=item
+                    name=item.lstrip()
                 )
                 tags.append(tag)
 
@@ -123,6 +138,11 @@ def entry():
 
 @app.route('/', methods=['GET'])
 def index():
+    """
+    view handles request and response to render index template
+    @return:
+    @rtype: str
+    """
     all_entries = models.Entry.select()
     return render_template('index.html', all_entries=all_entries)
 
@@ -147,8 +167,6 @@ def entries(entry_id):
     entry_tags = (models.Tag.select().join(models.JournalTags).where(models.JournalTags.entry == single_entry)
                   .order_by(models.Tag.name))
 
-
-
     # query the and db and select the Entry that matches the id that is passed through the url
     # render and pass that to the details pg and then render the correct entry within the template
     return render_template('detail.html', single_entry=single_entry, entry_tags=entry_tags)
@@ -165,29 +183,37 @@ def edit_entries(entry_id):
     entry_tags = (models.Tag.select().join(models.JournalTags).where(models.JournalTags.entry == entry_to_edit)
                   .order_by(models.Tag.name))
 
-    import pdb;
-    pdb.set_trace()
-    all_tags = models.Tag.select()
+    # all_tags = models.Tag.select()
     # variables
 
     tags = [tag.name for tag in entry_tags]
     parsed_tags = ','.join(tags)
     entry_owner = entry_to_edit.user
-    form = forms.EditForm(obj=entry_to_edit)
+    entry_to_edit.date = datetime.strptime(entry_to_edit.date, '%Y-%m-%d')
+    entry_to_edit.resources = str.join(',', entry_to_edit.resources)
+
+    form = forms.EditForm(
+
+        obj=entry_to_edit
+    )
+
     form1 = forms.TagForm(
         name=parsed_tags
     )
+
     # constraints = if owner of the Entry is not the current user do not allow edit
     if current_user == entry_owner:
         # populate the entry form with data from select query
         # upon the submit button update the contents of the entry
 
         if form.validate_on_submit():
-            form.populate_obj(entry_to_edit)
-            entry_to_edit.time_spent = datetime.timedelta(minutes=float(form.time_spent.data))
-            entry_to_edit.date = datetime.date.strptime(form.date.data, "%Y-%m-%d")
+            entry_to_edit.title = form.title.data
+            entry_to_edit.date = form.date.data
+            entry_to_edit.time_spent = timedelta(minutes=float(form.time_spent.data))
+            entry_to_edit.knowledge = form.knowledge.data
             entry_to_edit.resources = form.resources.data.splitlines()
             models.Entry.save(entry_to_edit)
+
 
         if form1.validate_on_submit():
             # first convert form data into a list
@@ -211,7 +237,8 @@ def edit_entries(entry_id):
     else:
         flash('you need to be the entries owner to edit this', category='error')
         return redirect(url_for('index'))
-    return render_template('edit.html', form=form, form1=form1)
+
+    return render_template('edit.html', form=form)
 
 
 @app.route('/delete/<int:entry_id>')

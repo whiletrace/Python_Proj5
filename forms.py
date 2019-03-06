@@ -55,7 +55,10 @@ class TagForm(FlaskForm):
         "Tags",
         validators=[
             Optional()
-        ]
+        ],
+        render_kw={
+            'placeholder': 'separate tags by commas'
+        }
     )
 
 
@@ -86,8 +89,13 @@ class EntryForm(FlaskForm):
         "Resources To Remember",
         validators=[
             DataRequired()
-        ]
+        ],
+        render_kw={
+            'placeholder': 'separate resources by new line'
+        }
+
     )
+
     name = FormField(TagForm)
 
 
@@ -96,7 +104,7 @@ class EditForm(FlaskForm):
         'Title',
 
     )
-    date = StringField(
+    date = DateField(
         'date',
 
     )
@@ -118,4 +126,5 @@ class EditForm(FlaskForm):
             DataRequired()
         ]
     )
+
     name = FormField(TagForm)
