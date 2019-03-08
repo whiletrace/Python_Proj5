@@ -13,6 +13,9 @@ def username_exists(form, field):
 
 
 class RegisterForm(FlaskForm):
+    """
+        Handles Registration Form
+    """
     username = StringField(
         'Username',
         validators=[
@@ -37,6 +40,9 @@ class RegisterForm(FlaskForm):
 
 
 class LoginForm(FlaskForm):
+    """
+        Handles Login Form
+    """
     username = StringField(
         "Username",
         validators=[
@@ -51,6 +57,9 @@ class LoginForm(FlaskForm):
 
 
 class TagForm(FlaskForm):
+    """
+        Handles TagForm
+    """
     name = StringField(
         "Tags",
         validators=[
@@ -63,6 +72,9 @@ class TagForm(FlaskForm):
 
 
 class EntryForm(FlaskForm):
+    """
+       Handles EntryForm
+    """
     title = StringField(
         'Title',
 
@@ -100,6 +112,9 @@ class EntryForm(FlaskForm):
 
 
 class EditForm(FlaskForm):
+    """
+       Handles EditForm
+    """
     title = StringField(
         'Title',
 
